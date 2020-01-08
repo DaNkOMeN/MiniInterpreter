@@ -17,7 +17,7 @@ public class MainClass {
     public static void main(String[] args) throws FileNotFoundException {
 
 //testWhileIf.qqq
-        File textOfProgram = new File("src/resources/test.qqq");
+        File textOfProgram = new File("src/resources/testWhileIf.qqq");
         Scanner scanner = new Scanner(textOfProgram);
         Lexem lexem;
         while ((lexem = getNextLexem(scanner)) != null) {

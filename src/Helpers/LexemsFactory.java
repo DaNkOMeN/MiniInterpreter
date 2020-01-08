@@ -23,7 +23,8 @@ public class LexemsFactory  {
                 return new InputLexem(lexem.substring(lexemName.length()).trim());
             case "While" :
                 return new WhileLexem(lexem.substring(lexemName.length()).trim(), scanner);
-            default: return null;
+            default:
+                System.out.println("Неправильная лексема "+ lexem);return null;
         }
     }
 }

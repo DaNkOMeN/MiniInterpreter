@@ -1,9 +1,8 @@
 Let x 20
-While (x<40)
-    If (x>30)
-        Print Lol
-    elseIf
-        Print kek
-    endIf
+If  (x<40)
+    Let k 2
+    Print k
     Let x x+1
-endWhile
+enddIf
+Print afterWhile
+Print k

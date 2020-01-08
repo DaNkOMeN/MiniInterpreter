@@ -18,15 +18,18 @@ public class IfLexem implements Lexem {
 
     @Override
     public Map<String, String> exec(Map<String, String> environment) {
-
+        Map<String, String> localEnvironment = new HashMap<String, String>(environment);
         if (expressionToBoolean(Expression.eval(environment, condition))){
             for (Lexem lex : thenBody){
-               environment = lex.exec(environment);
+               localEnvironment = lex.exec(localEnvironment);
             }
         } else {
             for (Lexem lex : elseBody){
-                environment = lex.exec(environment);
+                localEnvironment = lex.exec(localEnvironment);
             }
+        }
+        for (Map.Entry<String, String> mainEnv : environment.entrySet()){
+            mainEnv.setValue(localEnvironment.get(mainEnv.getKey()));
         }
         return environment;
     }

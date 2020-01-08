@@ -4,6 +4,7 @@ import Helpers.Expression;
 import Helpers.LexemsFactory;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -69,10 +70,14 @@ public class WhileLexem implements Lexem {
 
     @Override
     public Map<String, String> exec(Map<String, String> environment) {
-        while (expressionToBoolean(Expression.eval(environment, condition))){
+        Map<String, String> localEnvironment = new HashMap<String, String>(environment);
+        while (expressionToBoolean(Expression.eval(localEnvironment, condition))){
             for (Lexem lex : body){
-                environment = lex.exec(environment);
+                localEnvironment = lex.exec(localEnvironment);
             }
+        }
+        for (Map.Entry<String, String> mainEnv : environment.entrySet()){
+            mainEnv.setValue(localEnvironment.get(mainEnv.getKey()));
         }
         return environment;
     }
