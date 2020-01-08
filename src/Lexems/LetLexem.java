@@ -25,6 +25,9 @@ public class LetLexem implements Lexem {
         return body;
     }
 
+    public LetLexem() {
+    }
+
     public void setBody(String body) {
         this.body = body;
     }

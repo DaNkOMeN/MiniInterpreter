@@ -3,7 +3,7 @@ package Lexems;
 import java.util.Map;
 import java.util.Scanner;
 
-public class InputLex implements Lexem {
+public class InputLexem implements Lexem {
 
     private String body;
 
@@ -16,7 +16,10 @@ public class InputLex implements Lexem {
         return environment;
     }
 
-    public InputLex(String body) {
+    public InputLexem(String body) {
         this.body = body;
+    }
+
+    public InputLexem() {
     }
 }

@@ -12,9 +12,16 @@ public class PrintLexem implements Lexem {
         this.body = body;
     }
 
+    public PrintLexem() {
+    }
+
     @Override
     public Map<String, String> exec(Map<String, String> environment) {
-        System.out.println(Expression.eval(environment, this.body));
+        if (Expression.eval(environment, this.body) != null){
+            System.out.println(Expression.eval(environment, this.body));
+        } else {
+            System.out.println(body);
+        }
         return environment;
     }
 

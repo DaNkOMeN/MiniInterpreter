@@ -1,0 +1,9 @@
+Let x 20
+While (x<40)
+    If (x>30)
+        Print Lol
+    elseIf
+        Print kek
+    endIf
+    Let x x+1
+endWhile

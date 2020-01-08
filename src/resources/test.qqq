@@ -1,15 +1,7 @@
-Let x 10
-Let aaaa 100000
-/while (x <= 2020)
-Print x%3
-Print k
-If (x < aaaa)
-endIf
-/Let x x/3
-/Print x
-/endWhile
+Let x 5
+    While (x<20)
+        Print Hello6
 
-
-while (x < 10)
-Print x
-Let x x+1
+        Print OOOOOOOOOO
+        Let x x+1
+    endWhile
